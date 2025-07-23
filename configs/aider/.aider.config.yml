@@ -1,0 +1,108 @@
+################################################################################
+## Aider configuration file
+# I use this file to configure Aider to access different models, specs files, rules...
+#
+# You can find more information about the configuration file here:
+# https://aider.chat/docs/config/aider_conf.html
+################################################################################
+# Normally this option is used to cache the prompts to economize the LLM tokens during the conversation
+cache-prompts: true
+
+# My terminal is dark, so I want to use the dark theme
+dark-mode: true
+
+# If true, aider will automatically commit changes after each command
+# I want to commit manually, so I set this to false
+#
+# This option could be useful at true it if you want to revert the changes
+auto-commits: false
+
+# I add too many issues with file not committed because I update the file myself
+# So I disabled this option (check  yourself if you want to use it)
+# 
+# NOTE: You should commit or 'git add [file/to/path] for aider to be able to add this file and to see it'!
+dirty-commits: false
+
+# Don't ask for adding aider to .gitignore
+gitignore: false
+# don't look for git repo
+git : true
+
+
+# Here you should changes the path to your project, you can add a Claude.md file or old cursor rules.
+#
+# make the file readable by aider only
+# 
+# You can ask aider to edit them and they will be added as writeable files but by default they are not
+read: [ai/rules, ai/specs]
+
+# Add any file you want to be writeable by aider (usefull if you want to add a specific folder for each new conversation.
+file : []
+
+# I dont want to use the thinking token, I wasted 12M tokens with GEMINI PRO 2.5, so I disabled it, but you can enable it and set a default budget for thinking models
+thinking-tokens : 0
+
+# When pasting a url in the chat, Aider will try to download playwright to scrape the page
+# I don't want to download playwright, so I disabled it
+disable-playwright: true
+
+# If you wan to display the system prompts, you can enable this option
+show-prompts: false
+
+# Aider will try to detect urls in the chat, Aider will try to scrape it even without playwright
+# I want to copy urls for creating spec files, so I don't wait aider to trigger a scraping on api urls
+detect-urls: false
+
+# Writing Model path is really long, so I created some aliases to use them easily
+alias:
+  - "gemini-pro:gemini/gemini-2.5-pro"
+  - "gemini-flash:gemini/gemini-2.5-flash"
+  - "gemini-flash-lite:gemini/gemini-2.5-flash-lite-preview-06-17"
+  - "claude-4:openrouter/anthropic/claude-sonnet-4"
+  - "claude-3.5:openrouter/anthropic/claude-3.5-sonnet"
+  - "claude-3.7:openrouter/anthropic/claude-3.7-sonnet"
+  - "devstral:openrouter/mistralai/devstral-small:free"
+  - "deepseek-v3:openrouter/deepseek/deepseek-chat-v3-0324:free"
+  - "deepseek-r1:openrouter/deepseek/deepseek-r1-0528:free"
+  - "deepseek-r1-t2:openrouter/tngtech/deepseek-r1t2-chimera:free"
+  - kimi-k2:openrouter/moonshotai/kimi-k2
+  
+# Model for the tchat interface
+# IMPORTANT By default, aider will use the model in Ask mode, to write the commit messages and to edit the code.
+#
+# You can specify a different model editor and commit messages
+model : kimi-k2
+
+# # Model for editing files
+# editor-model: deepseek-v3
+
+# Model for the Git commits 
+weak-model: deepseek-v3
+
+# You can run the tests in the terminal after each edits, but it will add too much tokens to the conversation
+# So I disabled it
+# You can aways turn the auto-test off and set the command 'test-cmd' to launch your tests when needed only
+# test-cmd: npm run ci --workspace=front
+# auto-test: true
+
+# Always say yes to every confirmation
+# Aider will not ask you to confirm anything by default
+#
+# Important: With this option, Aider will not run any command (not possible to change it)
+# It's a security measure to avoid the LLM to run any command and destruct your system / project
+# Aider is not an autonomous agent, it's a tool to help you write code as a pair programming assistant
+yes-always: true
+
+# Use vim keybindings
+# vim: true
+#
+# Repomap (useless when having a big project) 
+# basically it will create add the first lines of the files in your project to know more fromt your project.
+#
+# But it will take a lot of tokens, so I disabled it
+# To be really honest, it's useful for small projects but for medium to big projects, you will have only a little number of file indexed.
+map-tokens: 0
+
+# Max chat history tokens## Soft limit on tokens for chat history, after which summarization begins. 
+# You can enabled it, I didn't make it works on my end...
+# max-chat-history-tokens: 10000
