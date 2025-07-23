@@ -8,7 +8,6 @@ This guide provides practical insights into working effectively with large langu
 - How to manage context efficiently  
 - How to choose the right model for your use case
 
----
 
 ## 📖 Understanding LLM Capabilities
 
@@ -31,7 +30,6 @@ To manage context effectively:
 > [🧠 Understanding LLM Context Windows](https://medium.com/@tahirbalarabe2/understanding-llm-context-windows-tokens-attention-and-challenges-c98e140f174d)  
 > [📹 Context Rot and LLM Performance](https://www.youtube.com/watch?v=TUjQuC4ugak)
 
----
 
 ### Instruction Following: Use the Right Models
 
@@ -43,8 +41,6 @@ Popular benchmarks often focus on:
 - General knowledge Q&A
 
 These aren’t always relevant. You don’t need a model that can ace trivia or solve math problems — you need one that **follows instructions consistently and respects project structure**.
-
----
 
 #### A Note on "Thinking Models"
 
@@ -71,4 +67,3 @@ On the other hand, simpler models like **DeepSeek Chat V3** often outperform the
 > "Their reasoning effort increases with problem complexity up to a point, then declines despite having an adequate token budget. By comparing LRMs with their standard LLM counterparts under equivalent inference compute, we identify three performance regimes: (1) low-complexity tasks where standard models surprisingly outperform LRMs, (2) medium-complexity tasks where additional thinking in LRMs demonstrates advantage, and (3) high-complexity tasks where both models experience complete collapse."  
 — [Apple: *The Illusion of Thinking*](https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf)
 
----
