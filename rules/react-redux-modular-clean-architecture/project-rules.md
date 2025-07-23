@@ -84,7 +84,7 @@ src/
 
 ---
 
-## 🔌 Dependency Injection
+## Dependency Injection
 
 * `src/di/gateways.ts`:
 
@@ -95,7 +95,7 @@ src/
 
 ---
 
-## ⚛️ React Structure
+## React Structure
 
 * Located in `src/front-end/`:
 
@@ -106,7 +106,7 @@ src/
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
 * TypeScript
 * Redux Toolkit (RTK)
