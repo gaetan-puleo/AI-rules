@@ -27,8 +27,9 @@ To manage context effectively:
 3. **Avoid debating with the model** — it’s not a person. If it misinterprets instructions, reset and try again with clearer input.
 
 > A 2023 study showed LLMs perform best when key information is placed at the beginning or end of the context.  
-> [🧠 Understanding LLM Context Windows](https://medium.com/@tahirbalarabe2/understanding-llm-context-windows-tokens-attention-and-challenges-c98e140f174d)  
-> [📹 Context Rot and LLM Performance](https://www.youtube.com/watch?v=TUjQuC4ugak)
+-  [🧠 Understanding LLM Context Windows](https://medium.com/@tahirbalarabe2/understanding-llm-context-windows-tokens-attention-and-challenges-c98e140f174d)  
+- [📹 Context Rot and LLM Performance](https://www.youtube.com/watch?v=TUjQuC4ugak)
+- [Deep Dive into LLMs like ChatGPT ](https://www.youtube.com/watch?v=7xTGNNLPyMI)
 
 
 ### Instruction Following: Use the Right Models
@@ -65,5 +66,39 @@ On the other hand, simpler models like **DeepSeek Chat V3** often outperform the
 3. **Smaller models may eventually outperform larger ones** for some tasks, though current evidence is still limited. Be cautious with their shorter context limits.
 
 > "Their reasoning effort increases with problem complexity up to a point, then declines despite having an adequate token budget. By comparing LRMs with their standard LLM counterparts under equivalent inference compute, we identify three performance regimes: (1) low-complexity tasks where standard models surprisingly outperform LRMs, (2) medium-complexity tasks where additional thinking in LRMs demonstrates advantage, and (3) high-complexity tasks where both models experience complete collapse."  
-— [Apple: *The Illusion of Thinking*](https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf)
+- [Apple: *The Illusion of Thinking*](https://ml-site.cdn-apple.com/papers/the-illusion-of-thinking.pdf)
+
+### Plan → Spec → Code: The Workflow That Keeps AI on Track
+
+When working with AI coding agents (Aider, Claude Code, OpenCode, etc.), one of the most effective ways to ensure reliability is to separate the interaction into three distinct phases:
+
+1. Plan – Use modes like /ask or “Plan” to define the intent of a feature.  
+   At this stage, the agent doesn't write or edit files. Instead, it helps you structure the problem:  
+   – Clarify the feature's goals and flow  
+   – Confirm file/folder architecture and naming conventions  
+   – Ask for missing details before moving forward  
+
+   To guide the agent properly, load two files into the context:  
+   – ai/rules/project-rules.md: defines the expected spec format and structure  
+   – ai/rules/spec-prompt.md: acts as a specialized prompt to generate .spec.md files accurately
+
+   Then prompt the agent like this:  
+   **→ “Please create a spec called getTasks, in the group Tasks. It fetches a list of todos from the backend.”**
+
+   **If the feature relies on an API or third-party service, copy and paste the relevant documentation at the end of your message.**
+
+2. Spec – Once the plan is clarified, switch to /code (Aider), Build mode (OpenCode), or command mode (Claude Code) to generate the actual spec file.  
+   The .spec.md file becomes a contract: it defines what to build, how to build it, and with what constraints.  
+   It improves reproducibility, reduces token usage, and keeps long-term alignment across sessions and tools.
+
+3. Code – After reviewing and finalizing the spec, stay in code mode to generate the feature implementation itself.  
+   The agent now writes only what’s described in the spec — nothing more, nothing less.
+
+This three-phase workflow helps scale AI-assisted development while maintaining control over code quality, structure, and project conventions.
+
+→ Plan first. Spec precisely. Then code. That’s how you stay in control.
+
+To go further : 
+- [Agentic Claude Code: 3 Codebase Folders for TOP 1% AI Coding](https://www.youtube.com/watch?v=hGg3nWp7afg) ( A highly recommended resource for getting started with AI-assisted and agentic coding. While not all content should be taken at face value, it offers valuable concepts and practical insights worth exploring.)
+
 

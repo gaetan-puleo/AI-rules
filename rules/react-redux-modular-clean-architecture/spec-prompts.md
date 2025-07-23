@@ -34,16 +34,16 @@ Optional file type:
 - \*.errors.ts
 
 Gateway files (only if API call is needed) belong to the group level and should be organized as follows:  
-- Interface: [domain]/shared/gateways/interfaces/[group].gateway.ts  
-- Fake implementation: [domain]/shared/gateways/implementation/Fake[Group].gateway.ts  
-- API implementation: [domain]/shared/gateways/implementation/Api[Group].gateway.ts
+- Interface: src/features/shared/gateways/interfaces/[group].gateway.ts  
+- Fake implementation: src/features/shared/gateways/implementation/Fake[Group].gateway.ts  
+- API implementation: src/features/shared/gateways/implementation/Api[Group].gateway.ts
 
 
 Here is the information about the feature:
-
+Input : 
 - Feature name: [featureName]
-- Group name: [groupName]
-- Feature location: src/features/[groupName]/[featureName]/
-- Group location: src/features/[groupName]/
-- Feature description: [describe your feature here]
-- [Add more information about the api / external services / features here]
+- Group name: [group]
+- Feature location: src/features/[group]/[featureName]/
+- Group location: src/features/[group]/
+- Feature description: [describe the feature in your prompt when you create the spec]
+
