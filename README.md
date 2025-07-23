@@ -13,7 +13,6 @@ These tools can all follow the same spec-driven workflow, with consistent prompt
 ## 📚 Rules
 
 - [React Redux Modular Clean Architecture](rules/react-redux-modular-clean-architecture/)
--- please add a cog emoji for next title
 ## ⚙️ Configs
 
 - [Aider](configs/aider/)
