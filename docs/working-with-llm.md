@@ -83,7 +83,8 @@ When working with AI coding agents (Aider, Claude Code, OpenCode, etc.), one of 
    – ai/rules/spec-prompt.md: acts as a specialized prompt to generate .spec.md files accurately
 
    Then prompt the agent like this:  
-   ```Please create a spec called getTasks, in the group Tasks. It fetches a list of todos from the backend.
+   ```
+   Please create a spec called getTasks, in the group Tasks. It fetches a list of todos from the backend.
    ```
 
    **If the feature relies on an API or third-party service, copy and paste the relevant documentation at the end of your message.**
