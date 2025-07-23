@@ -12,4 +12,4 @@ These tools can all follow the same spec-driven workflow, with consistent prompt
 
 ## 📚 Rules
 
-- [rules/React Redux Modular Clean Architecture](rules/react-redux-modular-clean-architecture/)
+- [React Redux Modular Clean Architecture](rules/react-redux-modular-clean-architecture/)
