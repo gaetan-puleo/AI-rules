@@ -13,8 +13,6 @@
 * Remove unnecessary comments.
 * Exclude example or placeholder comments from committed code.
 
----
-
 ## Feature Groups
 
 * A **feature group** is a set of related features (e.g. `messaging`, `settings`, `calendar`).
@@ -29,7 +27,6 @@
   src/features/shared/
   ```
 
----
 
 ### Example Structure (Messaging)
 
@@ -62,8 +59,6 @@ src/
         notification.entity.ts
 ```
 
----
-
 ## Feature File Types
 
 * `*.reducer.ts` – Redux slice logic
@@ -73,7 +68,6 @@ src/
 * `*.events.ts` – Redux actions
 * `*.entity.ts` – TypeScript entities in `src/features/shared/entities/`
 
----
 
 ## Store Setup
 
@@ -81,8 +75,6 @@ src/
 
   * Exports `initStore`, `AppStore`, `AppDispatch`, `AppState`
   * Used to inject gateway implementations via `options.gateways`
-
----
 
 ## Dependency Injection
 
@@ -93,7 +85,6 @@ src/
     * `Gateways` – all gateway implementations
     * `PartialGateways` – for unit tests or partial injection
 
----
 
 ## React Structure
 
@@ -103,8 +94,6 @@ src/
   * `components/`
   * `pages/`
   * Other (router, theme)
-
----
 
 ##  Tech Stack
 
@@ -118,8 +107,6 @@ src/
 * Wouter
 * Tailwind CSS (when needed)
 * [... updates this list with your own tech stack]
-
----
 
 ## Code Conventions
 
@@ -135,8 +122,6 @@ export function Component(props: ComponentProps) {
 export const Component = (props: ComponentProps) => (<div>Hello</div>)
 ```
 
----
-
 ### ✅ Props Handling
 
 ```tsx
@@ -148,8 +133,6 @@ function Component(props: Props) {
 // Bad
 function Component({ propName }: Props) {}
 ```
-
----
 
 ### ✅ Reducer Example
 
@@ -168,8 +151,6 @@ export const featureReducer = createReducer(initialState, (builder) => {
     })
 })
 ```
-
----
 
 ### ✅ Tests
 
@@ -200,8 +181,6 @@ describe('getMessageThread use-case', () => {
 import { describe, expect, vi } from 'vitest'
 ```
 
----
-
 ### ✅ Use Case Example
 
 ```ts
@@ -217,8 +196,6 @@ export const sendMessage = (input: MessageInput) => {
   }
 }
 ```
-
----
 
 ## Other Rules
 
